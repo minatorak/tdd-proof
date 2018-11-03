@@ -6,4 +6,8 @@ class Captcha(private val pattern: Int, private val leftOperand: Int, private va
         return stringOperand[leftOperand - 1]
     }
 
+    fun getOperator(): String {
+        return "+"
+    }
+
 }
