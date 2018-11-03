@@ -10,7 +10,10 @@ class Captcha(private val pattern: Int, private val leftOperand: Int, private va
         else -> outScope
     }
 
-    fun getOperator(): String = operators[operator - 1]
+    fun getOperator(): String = when (operator > operators.size) {
+        false -> operators[operator - 1]
+        true -> outScope
+    }
 
     fun getRightOperand(): String = when (pattern) {
         1 -> rightOperand.toString()
@@ -18,7 +21,5 @@ class Captcha(private val pattern: Int, private val leftOperand: Int, private va
         else -> outScope
     }
 
-    override fun toString(): String {
-        return "${getLeftOperand()} ${getOperator()} ${getRightOperand()}"
-    }
+    override fun toString(): String = "${getLeftOperand()} ${getOperator()} ${getRightOperand()}"
 }
