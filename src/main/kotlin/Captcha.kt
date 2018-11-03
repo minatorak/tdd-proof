@@ -7,6 +7,7 @@ class Captcha(private val pattern: Int, private val leftOperand: Int, private va
     }
 
     fun getOperator(): String {
+        if (operator == 2) return "*"
         return "+"
     }
 

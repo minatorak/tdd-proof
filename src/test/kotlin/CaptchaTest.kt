@@ -43,8 +43,14 @@ class CaptchaTest {
 
     @Test
     fun operator_1_ShouldBeReturnPlus() {
-        val captcha = Captcha(1,1,1,rightOperandDummy)
-        Assert.assertEquals("+",captcha.getOperator())
+        val captcha = Captcha(1, 1, 1, rightOperandDummy)
+        Assert.assertEquals("+", captcha.getOperator())
+    }
+
+    @Test
+    fun operator_2_ShouldBeReturnMultiplier() {
+        val captcha = Captcha(1, 1, 2, rightOperandDummy)
+        Assert.assertEquals("*", captcha.getOperator())
     }
 
 }
