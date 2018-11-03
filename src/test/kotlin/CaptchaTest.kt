@@ -7,19 +7,25 @@ class CaptchaTest {
 
     @Test
     fun firstPatternLeftShouldBeReturnOne() {
-        val captcha = Captcha(1,1, operatorDummy, rightOperandDummy)
-        Assert.assertEquals("One",captcha.getLeftOperand())
+        val captcha = Captcha(1, 1, operatorDummy, rightOperandDummy)
+        Assert.assertEquals("One", captcha.getLeftOperand())
     }
 
     @Test
     fun firstPatternLeftShouldBeReturnFive() {
-        val captcha = Captcha(1,5,operatorDummy,rightOperandDummy)
-        Assert.assertEquals("Five",captcha.getLeftOperand())
+        val captcha = Captcha(1, 5, operatorDummy, rightOperandDummy)
+        Assert.assertEquals("Five", captcha.getLeftOperand())
     }
 
     @Test
     fun firstPatternLeftShouldBeReturnNine() {
-        val captcha = Captcha(1,9,operatorDummy,rightOperandDummy)
-        Assert.assertEquals("Nine",captcha.getLeftOperand())
+        val captcha = Captcha(1, 9, operatorDummy, rightOperandDummy)
+        Assert.assertEquals("Nine", captcha.getLeftOperand())
+    }
+
+    @Test
+    fun secondPatternLeftShouldBeReturn_1() {
+        val captcha = Captcha(2, 1, operatorDummy, rightOperandDummy)
+        Assert.assertEquals("1", captcha.getLeftOperand())
     }
 }
