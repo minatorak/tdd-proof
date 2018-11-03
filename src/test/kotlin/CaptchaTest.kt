@@ -4,6 +4,8 @@ import org.junit.Test
 class CaptchaTest {
     private val operatorDummy = 1
     private val rightOperandDummy = 1
+    private val patternDummy = 1
+    private val leftOperandDummy = 1
 
     @Test
     fun firstPatternLeftShouldBeReturnOne() {
@@ -43,13 +45,13 @@ class CaptchaTest {
 
     @Test
     fun operator_1_ShouldBeReturnPlus() {
-        val captcha = Captcha(1, 1, 1, rightOperandDummy)
+        val captcha = Captcha(patternDummy, leftOperandDummy, 1, rightOperandDummy)
         Assert.assertEquals("+", captcha.getOperator())
     }
 
     @Test
     fun operator_2_ShouldBeReturnMultiplier() {
-        val captcha = Captcha(1, 1, 2, rightOperandDummy)
+        val captcha = Captcha(patternDummy, leftOperandDummy, 2, rightOperandDummy)
         Assert.assertEquals("*", captcha.getOperator())
     }
 
