@@ -2,14 +2,13 @@ class Captcha(private val pattern: Int, private val leftOperand: Int, private va
 
     fun getLeftOperand(): String {
         if (pattern == 2) return leftOperand.toString();
-        val stringOperand: List<String> = listOf("One", "Two", "Three", "Four", "Five", "Six", "Seven","Eight", "Nine")
+        val stringOperand: List<String> = listOf("One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine")
         return stringOperand[leftOperand - 1]
     }
 
     fun getOperator(): String {
-        if (operator == 2) return "*"
-        if (operator == 3) return "-"
-        return "+"
+        val operatorlist = listOf<String>("+", "*", "-")
+        return operatorlist[operator - 1]
     }
 
 }
