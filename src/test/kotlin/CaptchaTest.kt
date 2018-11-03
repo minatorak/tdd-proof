@@ -34,4 +34,11 @@ class CaptchaTest {
         val captcha = Captcha(2, 5, operatorDummy, rightOperandDummy)
         Assert.assertEquals("5", captcha.getLeftOperand())
     }
+
+    @Test
+    fun secondPatternLeftShouldBeReturn_9() {
+        val captcha = Captcha(2, 9, operatorDummy, rightOperandDummy)
+        Assert.assertEquals("9", captcha.getLeftOperand())
+    }
+
 }
