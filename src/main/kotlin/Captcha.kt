@@ -14,9 +14,7 @@ class Captcha(private val pattern: Int, private val leftOperand: Int, private va
 
     fun getRightOperand(): String {
         if (pattern == 2) {
-            if (rightOperand == 1) return "One"
-            if (rightOperand == 5) return "Five"
-            if (rightOperand == 9) return "Nine"
+            return stringOperand[rightOperand - 1]
         }
         return rightOperand.toString()
     }
