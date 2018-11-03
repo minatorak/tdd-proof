@@ -60,4 +60,22 @@ class CaptchaTest {
         val captcha = Captcha(patternDummy, leftOperandDummy, 3, rightOperandDummy)
         Assert.assertEquals("-", captcha.getOperator())
     }
+
+    @Test
+    fun firstPatternRightShouldBeReturn_1() {
+        val captcha = Captcha(1, leftOperandDummy, operatorDummy, 1)
+        Assert.assertEquals("1", captcha.getRightOperand())
+    }
+
+    @Test
+    fun firstPatternRightShouldBeReturn_5() {
+        val captcha = Captcha(1, leftOperandDummy, operatorDummy, 5)
+        Assert.assertEquals("5", captcha.getRightOperand())
+    }
+
+    @Test
+    fun firstPatternRightShouldBeReturn_9() {
+        val captcha = Captcha(1, leftOperandDummy, operatorDummy, 9)
+        Assert.assertEquals("9", captcha.getRightOperand())
+    }
 }

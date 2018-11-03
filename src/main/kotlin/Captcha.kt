@@ -7,8 +7,14 @@ class Captcha(private val pattern: Int, private val leftOperand: Int, private va
     }
 
     fun getOperator(): String {
-        val operatorlist = listOf<String>("+", "*", "-")
-        return operatorlist[operator - 1]
+        val operators = listOf("+", "*", "-")
+        return operators[operator - 1]
+    }
+
+    fun getRightOperand(): String {
+        if (rightOperand == 5) return "5"
+        if (rightOperand == 9) return "9"
+        return "1"
     }
 
 }
