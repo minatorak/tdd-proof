@@ -19,4 +19,7 @@ class Captcha(private val pattern: Int, private val leftOperand: Int, private va
         return rightOperand.toString()
     }
 
+    override fun toString(): String {
+        return "${getLeftOperand()} ${getOperator()} ${getRightOperand()}"
+    }
 }

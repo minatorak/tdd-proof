@@ -96,4 +96,22 @@ class CaptchaTest {
         val captcha = Captcha(2, leftOperandDummy, operatorDummy, 9)
         Assert.assertEquals("Nine", captcha.getRightOperand())
     }
+
+    @Test
+    fun firstPatternLeftOneOperatorPlusRight_3() {
+        val  captcha = Captcha(1,1,1,3)
+        Assert.assertEquals("One + 3",captcha.toString())
+    }
+
+    @Test
+    fun firstPatternLeftFour_OperatorMinusRight_7() {
+        val captcha = Captcha(1,4,3,7)
+        Assert.assertEquals("Four - 7",captcha.toString())
+    }
+
+    @Test
+    fun secondPatternLeft_6_OperatorMultiplexRightThree() {
+        val captcha = Captcha(2,6,2,3)
+        Assert.assertEquals("6 * Three",captcha.toString())
+    }
 }
