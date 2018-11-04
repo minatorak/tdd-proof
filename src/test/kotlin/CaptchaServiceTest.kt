@@ -5,9 +5,8 @@ import java.util.*
 class CaptchaServiceTest {
     @Test
     fun toStringTest() {
-        val mockRandomise = StubRandomizes()
-        val spy007 = Captcha(mockRandomise.pattern, mockRandomise.operand, mockRandomise.operator, mockRandomise.operand)
-        val captchaService = CaptchaService(spy007)
+        val stubRandomise = StubRandomizes()
+        val captchaService = CaptchaService(stubRandomise)
         Assert.assertEquals("One + 1", captchaService.getCaptcha())
     }
 

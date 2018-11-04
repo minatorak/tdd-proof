@@ -1,6 +1,6 @@
-class CaptchaService(private val captcha: Captcha) {
+class CaptchaService(private val randomizes: Randomizes) {
 
     fun getCaptcha(): String {
-        return captcha.toString()
+        return Captcha(randomizes.pattern, randomizes.operand, randomizes.operator, randomizes.operand).toString()
     }
 }
