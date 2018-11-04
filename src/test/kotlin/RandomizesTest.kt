@@ -5,32 +5,34 @@ import java.util.*
 class RandomizesTest {
     @Test
     fun getPatternShouldBeOneCallRandomNextInt() {
-        val spy007Random = Spy007Random(0)
+        val spy007Random = Spy007Random()
         val randomizes = Randomizes(spy007Random)
         randomizes.randomPattern
         Assert.assertTrue(spy007Random.verifyThatNextIntHaveBeenOneCall())
     }
 
     @Test
-    fun getPatternShouldBeReturn_1() {
-        val spy007Random = Spy007Random(0)
+    fun getOperandShouldBeOneCallRandom() {
+        val spy007Random = Spy007Random()
         val random = Randomizes(spy007Random)
-        Assert.assertEquals(1, random.randomPattern)
+        random.operand
+        Assert.assertTrue(spy007Random.verifyThatNextIntHaveBeenOneCall())
     }
 
     @Test
-    fun getPatternShouldBeReturn_2() {
-        val spy007Random = Spy007Random(1)
+    fun getOperatorShouldBeOneCallRandom() {
+        val spy007Random = Spy007Random()
         val random = Randomizes(spy007Random)
-        Assert.assertEquals(2, random.randomPattern)
+        random.operator
+        Assert.assertTrue(spy007Random.verifyThatNextIntHaveBeenOneCall())
     }
 
-    class Spy007Random(private val mockNextInt: Int) : Random() {
+    class Spy007Random : Random() {
         private var token: Int = 0
 
         override fun nextInt(bound: Int): Int {
             token += 1
-            return mockNextInt
+            return 0
         }
 
         fun verifyThatNextIntHaveBeenOneCall(): Boolean {

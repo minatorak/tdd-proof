@@ -10,4 +10,12 @@ class Randomizes {
     public int getRandomPattern() {
         return random.nextInt(2) + 1;
     }
+
+    public int getOperator() {
+        return random.nextInt(3) + 1;
+    }
+
+    public int getOperand() {
+        return random.nextInt(9) + 1;
+    }
 }
