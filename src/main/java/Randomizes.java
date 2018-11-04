@@ -1,13 +1,11 @@
 import java.util.Random;
 
-class Randomizes {
+public class Randomizes {
     private Random random;
 
-    Randomizes(Random random) {
-        this.random = random;
-    }
+    Randomizes(Random random) { this.random = random; }
 
-    public int getRandomPattern() {
+    public int getPattern() {
         return random.nextInt(2) + 1;
     }
 

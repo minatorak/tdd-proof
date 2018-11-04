@@ -7,7 +7,7 @@ class RandomizesTest {
     fun getPatternShouldBeOneCallRandomNextInt() {
         val spy007Random = Spy007Random()
         val randomizes = Randomizes(spy007Random)
-        randomizes.randomPattern
+        randomizes.pattern
         Assert.assertTrue(spy007Random.verifyThatNextIntHaveBeenOneCall())
     }
 
